@@ -9,7 +9,7 @@ node{
   stage( 'Compile-Package-create-war-file'){
     // Get maven home path
     def mvnHome = tool name: 'Maven' , type: 'maven'
-    bat "${mvnHome}/bin/mvn package"
+    bat "${mvnHome}/bin/mvn clean package"
   }
   stage('Deploy to tomcat '){
     bat "copy target\\JenkinsPipeline.war \"${tomcatWeb}\\JenkinsPipeline.war\""
