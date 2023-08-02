@@ -12,7 +12,7 @@ node{
     bat "${mvnHome}/bin/mvn clean package"
   }
   stage('Deploy to tomcat '){
-    bat "copy target\\HelloWorldWebApp.war \"${tomcatWeb}\\HelloWorldWebApp.war\""
+    bat "copy target\\HelloWorldWebApp-1.0-SNAPSHOT.war \"${tomcatWeb}\\HelloWorldWebApp-1.0-SNAPSHOT.war\""
   }
   stage('start Tomcat Server'){
     sleep(time:5,unit:"SECONDS")
